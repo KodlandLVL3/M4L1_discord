@@ -29,7 +29,7 @@ async def send_message():
     for user_id in manager.get_users():
         prize_id, img = manager.get_random_prize()[:2]
         hide_img(img)
-        user = await bot.fetch_user(user_id)  # Изменено на fetch_user для гарантии получения пользователя
+        user = await bot.fetch_user(user_id) 
         if user:
             await send_image(user, f'hidden_img/{img}', prize_id)
         manager.mark_prize_used(prize_id)
